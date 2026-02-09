@@ -3,6 +3,7 @@ import cors from 'cors';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 import userRoute from './src/routes/userRoute.js';
+import audienceRoute from './src/routes/audienceRoute.js';
 dotenv.config();
 
 const app = express();
@@ -17,6 +18,10 @@ app.get("/", (req, res) => {
     res.send("Hello World");
 })
 
+// audience route
+app.use("/api/audience", audienceRoute)
+
+//user route
 app.use("/api/users", userRoute);
 
 app.listen(PORT, () => {
