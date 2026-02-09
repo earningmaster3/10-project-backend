@@ -8,3 +8,8 @@ export const registerUser = async (userData) => {
 
     }
 }
+
+export const allAudience = async () => {
+    const res = await api.get("api/audience");
+    return res.data;
+}
